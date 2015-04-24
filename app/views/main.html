@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>我的事件列表</h2>
+    <!--Todos input-->
+    <form role="form" ng-submit="addTodo()">
+        <div class="input-group">
+            <input type="text" ng-model="todo" placeholder="添加一个任务" class="form-control">
+            <span class="input-group-btn">
+                <input type="submit" value="添加" class="btn btn-primary">
+            </span>
+        </div>
+    </form><br>
+
+    <!-- Todos list -->
+    <div ui-sortable ng-model="todos">
+        <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
+            <input type="text" ng-model="todo" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+            </span>
+        </p>
+    </div>
+</div>
